@@ -3,7 +3,7 @@
 # Set main screen position
 xrandr --output eDP1 --primary --pos 570x1080 --output DP1 --pos 0x0
 
-sh ./custom-scripts/reload-wallpaper.sh &
+sh ./custom-scripts/reload_wallpaper.sh &
 
 libinput-gestures -c $XDG_CONFIG_HOME/libinput-gestures.conf &
 
