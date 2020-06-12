@@ -1,0 +1,5 @@
+include "/home/serezha/configs/nord.rasi"
+configuration {
+	theme: 'nord'
+	font: 'Hack 8'
+}
