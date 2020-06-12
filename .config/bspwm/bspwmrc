@@ -1,5 +1,4 @@
 #! /bin/sh
-#xrandr --output eDP1 --primary --pos 570x2160 --output DP1 --scale 2x2 --pos 0x0 &
 sxhkd &
 libinput-gestures-setup restart &
 
