@@ -9,9 +9,9 @@ chosen="$(echo -e "$options"| rofi -p "$1" -dmenu -selected-row 2)"
 
 case $chosen in
 	$onlyMain)
-		bash -ic 'swtchmd "only-main"' ;;
+		xrandr --output eDP1 --auto --output DP1 --off && bash -ic 'swtchmd "only-main"' ;;
 	$onlyExternal)
-		bash -ic 'swtchmd "only-second"' ;;
+		xrandr --output DP1 --auto --output eDP1 --off && bash -ic 'swtchmd "only-second"' ;;
 	$both)
-		bash -ic 'swtchmd "both"' ;;
+		xrandr --output DP1 --auto --output eDP1 --auto && bash -ic 'swtchmd "both"' ;;
 esac
