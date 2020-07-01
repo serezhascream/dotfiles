@@ -56,3 +56,9 @@ super + alt + {h,j,k,l}
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+super + s
+	gnome-screenshot
+
+super + shift + s
+	gnome-screenshot -i
