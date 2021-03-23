@@ -4,7 +4,8 @@ pseudo-transparency = true
 
 [colors]
 background         = ${xrdb:*.background}
-background-lighten = ${xrdb:*.color0}
+#background-lighten = ${xrdb:*.color0}
+background-lighten = ${xrdb:*.color16}
 foreground         = ${xrdb:*.foreground}
 red                = ${xrdb:*.color1}
 orange             = ${xrdb:*.color11}
@@ -12,6 +13,7 @@ yellow             = ${xrdb:*.color3}
 lightblue          = ${xrdb:*.color4}
 blue               = ${xrdb:*.color6}
 darkgray           = ${xrdb:*.color8}
+green              = ${xrdb:*.color17}
 
 
 [bar/main]
@@ -32,12 +34,13 @@ module-margin = 1
 override-redirect = true
 wm-restack = bspwm
 
-font-0 = Hack:size=12;2
-font-1 = MaterialIcons:size=12;2
-font-2 = Hack:size=12;2
+font-0 = Hack:size=10;2
+font-1 = Hack:size=10;2
+font-2 = MaterialIcons:size=12;2
 font-3 = FontAwesome:size=12;2
 
 modules-left = bspwm
+modules-center = player
 modules-right = cpu memory xkeyboard pulseaudio battery time
 
 [bar/second]
@@ -58,11 +61,12 @@ padding-right = 1
 module-margin = 1
 
 font-0 = Hack:size=8;2
-font-1 = MaterialIcons:size=12;2
-font-2 = Hack:size=8;2
-font-3 = FontAwesome:size=12;2
+font-1 = Hack:size=8;2
+font-2 = MaterialIcons:size=11;3
+font-3 = FontAwesome:size=11;3
 
 modules-left = bspwm
+modules-center = player
 modules-right = cpu memory xkeyboard pulseaudio battery time
 
 [module/xkeyboard]
@@ -116,8 +120,8 @@ label-mode-padding = 0
 label-mode-background = ${colors.red}
 
 label-focused = %name%
-label-focused-foreground = ${colors.orange}
-label-focused-background = ${colors.darkgray}
+label-focused-foreground = ${colors.green}
+label-focused-background = ${colors.background-lighten}
 label-focused-padding = 1
 
 label-occupied = %name%
@@ -129,7 +133,7 @@ label-visible-padding = 1
 
 label-urgent = %name%
 label-urgent-foreground = ${colors.background}
-label-urgent-background = ${colors.red}
+label-urgent-background = ${colors.green}
 label-urgent-padding =1
 
 label-empty = %name%
@@ -264,11 +268,11 @@ poll-interval = 5
 ;format-charging = <ramp-capacity> <label-charging>
 ;format-discharging = <ramp-capacity> <label-discharging>
 ;format-full = <ramp-capacity> <label-full>
-format-charging = <label-charging> <ramp-capacity>
+format-charging = <label-charging>
 format-discharging = <ramp-capacity>
 format-full = <ramp-capacity>
 
-label-charging = 
+label-charging = 
 label-discharging = %percentage%%
 label-full = %percentage%%
 
@@ -317,5 +321,13 @@ date = %%{F#99}%a %d %B %Y%%{F-} %%{F#fff}%H:%M%%{F-}
 [module/time]
 type = internal/date
 date = %%{F#FFF}%H:%M%%{F-}
+
+[module/player]
+type = custom/script
+exec = ~/.config/polybar/.player-module.sh
+interval = 2
+click-left = playerctl play-pause &
+click-right = playerctl next &
+click-middle = playerctl previous &
 
 ; vim:ft=dosini

@@ -2,4 +2,6 @@ include "/home/serezha/configs/nord.rasi"
 configuration {
 	theme: 'nord'
 	font: 'Hack 8'
+	show-icons: true
+	modi: window,run,ssh,drun
 }

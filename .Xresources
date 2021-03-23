@@ -16,8 +16,8 @@ XTerm*ptyInitialErase: true
 ! Loginshell
 XTerm*.loginShell: true
 !
-XTerm*VT100*selectToClipboard:  true
-XTerm*VT100*saveLines:          1000
+XTerm*VT100*selectToClipboard: true
+XTerm*VT100*saveLines: 1000
 ! end ttf settings
 
 ! Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
@@ -28,6 +28,7 @@ XTerm*VT100*saveLines:          1000
 ! Repository: https://github.com/arcticicestudio/nord-xresources
 ! License:    MIT
 
+#define nord00 #1A1D23
 #define nord0 #2E3440
 #define nord1 #3B4252
 #define nord2 #434C5E
@@ -44,9 +45,10 @@ XTerm*VT100*saveLines:          1000
 #define nord13 #EBCB8B
 #define nord14 #A3BE8C
 #define nord15 #B48EAD
+#define nord16 #3FC1B0
 
 *.foreground:   #D8DEE9
-*.background:   #2E3440
+*.background:   #22272f
 *.cursorColor:  #D8DEE9
 *fading: 35
 *fadeColor: #4C566A
@@ -67,5 +69,12 @@ XTerm*VT100*saveLines:          1000
 *.color13: #B48EAD
 *.color14: #8FBCBB
 *.color15: #ECEFF4
+*.color16: #1A1D23
+*.color17: #3FC1B0
 
+Xcursor.theme: xcursor-simpleandsoft
 Xcursor.size: 64
+
+! RXVT CONFIG
+URxvt*font: xft:Hack:pixelsize=12
+URxvt*scrollBar: false

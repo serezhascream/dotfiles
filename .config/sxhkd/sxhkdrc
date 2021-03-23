@@ -20,7 +20,10 @@ super + shift + r
 
 # Run rofi
 super + d
-	rofi -theme $XDG_CONFIG_HOME/rofi/nord.rasi -font "Hack 8" -show run
+	rofi -theme $XDG_CONFIG_HOME/rofi/nord.rasi -font "Hack 8" -show drun -icon-theme "Papirus" -show-icons
+
+super + shift + d
+	rofi -theme $XDG_CONFIG_HOME/rofi/nord.rasi -font "Hack 8" -show drun -icon-theme "Papirus" -show-icons
 
 # Switching between workspaces
 super + {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
@@ -47,7 +50,10 @@ super + {F2, shift + F2}
 	xterm {-e vim, -name "FloatingVim" -e vim}
 
 super + F3
-	chromium
+	google-chrome-stable
+
+super + F4
+	blueman-manager
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
