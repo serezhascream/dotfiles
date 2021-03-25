@@ -67,7 +67,7 @@ font-3 = FontAwesome:size=11;3
 
 modules-left = bspwm
 modules-center = player
-modules-right = cpu memory xkeyboard pulseaudio battery time
+modules-right = cpu memory xkeyboard pulseaudio mic-volume battery time
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -331,3 +331,14 @@ click-right = playerctl next &
 click-middle = playerctl previous &
 
 ; vim:ft=dosini
+
+[module/mic-volume]
+type = custom/script
+interval = 1
+format = <label>
+exec = bash ~/.config/polybar/mic-volume.sh show-vol 'alsa_input.pci-0000_00_1b.0.analog-stereo'
+
+; Control actions (using pactl)
+click-left = bash ~/.config/polybar/mic-volume.sh mute-vol 'alsa_input.pci-0000_00_1b.0.analog-stereo'
+; scroll-up = bash ~/.config/polybar/mic-volume.sh inc-vol 'alsa_input.pci-0000_00_1b.0.analog-stereo'
+; scroll-down = bash ~/.config/polybar/mic-volume.sh dec-vol 'alsa_input.pci-0000_00_1b.0.analog-stereo'
