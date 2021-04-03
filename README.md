@@ -4,7 +4,7 @@
 2. Define the alias in the current shell scope
 `alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'`
 3. Hide untracked files
-`git config --global status.showUntrackedFiles no`
+`dot config --global status.showUntrackedFiles no`
 4. Checkout the actual content from the git repository to $HOME
 `dotfiles checkout`
 5. If needed, copy xserver config files from xorg.conf.d to /etc/X11/xorg.conf.d/
