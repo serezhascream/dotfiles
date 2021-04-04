@@ -12,3 +12,5 @@ alias refresh-gestures="libinput-gestures-setup restart"                        
 alias dot="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"              # for managing dotfiles 
 alias privC="/usr/bin/git --git-dir=$HOME/privateConfigs/ --work-tree=$HOME"      # for managing private configs
 alias notes="/usr/bin/git --git-dir=$HOME/notes/ --work-tree=$HOME/Dropbox/Notes" # for managing notes
+alias ..="cd .."
+alias ~="cd ~"
