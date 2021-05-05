@@ -1,6 +1,6 @@
 " # VUNDLE
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin('~/.config/nvim/bundle')
 
 " ####### Plugins list
 Plugin 'groenewege/vim-less'
@@ -11,13 +11,9 @@ Plugin 'arcticicestudio/nord-vim'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
-" Plugin 'valloric/youcompleteme'
+Plugin 'Shougo/deoplete.nvim'
 
 Plugin 'preservim/nerdtree'
-" Plugin 'tyrannicaltoucan/vim-quantum'
-" Plugin 'tpope/vim-surround'
-" Plugin 'kien/ctrlp.vim'
 Plugin 'plasticboy/vim-markdown'
 
 call vundle#end() 
@@ -37,8 +33,9 @@ set wildignore+=*/tmp/*,*/log/*,*/public/sitestatics/*,*/public/img/*,*/public/f
 let g:gitgutter_grep     = ''
 let g:gitgutter_map_keys = 0
 
-runtime plugin_configs/ale
-runtime plugin_configs/airline
-runtime plugin_configs/netrw
+runtime configs/ale
+runtime configs/airline.vim
+runtime configs/nerdtree
+runtime configs/deoplete.vim
 
 colorscheme nord
