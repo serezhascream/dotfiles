@@ -2,6 +2,10 @@
 margin-bottom = 0
 pseudo-transparency = true
 
+[displays]
+main = ${env:MAIN_DISPLAY}
+second = ${env:SECOND_DISPLAY}
+
 [colors]
 background         = ${xrdb:*.background}
 #background-lighten = ${xrdb:*.color0}
@@ -17,14 +21,14 @@ green              = ${xrdb:*.color17}
 
 
 [bar/main]
-monitor = eDP1
+monitor = ${displays.main}
 width = 100%
 height = 25
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-color = $(colors.background}
+line-color = ${colors.background}
 line-size = 25
 
 spacing = 0
@@ -35,16 +39,16 @@ override-redirect = true
 wm-restack = bspwm
 
 font-0 = Hack:size=10;2
-font-1 = Hack:size=10;2
-font-2 = MaterialIcons:size=12;2
-font-3 = FontAwesome:size=12;2
+font-1 = Hack:size=11;2
+font-2 = MaterialIcons-Regular:size=14;3
+font-3 = FontAwesome:size=14;2
 
 modules-left = bspwm
 modules-center = player
-modules-right = cpu memory xkeyboard pulseaudio battery time
+modules-right = cpu memory xkeyboard pulseaudio mic-volume battery time
 
 [bar/second]
-monitor = DP1
+monitor = ${displays.second}
 width = 100%
 height = 25
 
@@ -67,7 +71,7 @@ font-3 = FontAwesome:size=11;3
 
 modules-left = bspwm
 modules-center = player
-modules-right = cpu memory xkeyboard pulseaudio mic-volume battery time
+modules-right = cpu memory wireless-network xkeyboard pulseaudio mic-volume battery time
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -117,10 +121,10 @@ format = <label-state> <label-mode>
 
 label-mode = %icon%
 label-mode-padding = 0
-label-mode-background = ${colors.red}
+label-mode-background = ${colors.green}
 
 label-focused = %name%
-label-focused-foreground = ${colors.green}
+label-focused-foreground = ${colors.red}
 label-focused-background = ${colors.background-lighten}
 label-focused-padding = 1
 
@@ -133,7 +137,7 @@ label-visible-padding = 1
 
 label-urgent = %name%
 label-urgent-foreground = ${colors.background}
-label-urgent-background = ${colors.green}
+label-urgent-background = ${colors.red}
 label-urgent-padding =1
 
 label-empty = %name%
@@ -205,7 +209,7 @@ bar-used-empty-foreground = ${colors.darkgray}
 
 [module/wireless-network]
 type = internal/network
-interface = wlp3s0
+interface = wlan0
 
 ; Accumulate values from all interfaces
 ; when querying for up/downspeed rate
@@ -221,33 +225,33 @@ unknown-as-up = true
 ; Available tags:
 ;   <label-connected> (default)
 ;   <ramp-signal>
-format-connected = <ramp-signal> <label-connected>
+format-connected = <ramp-signal>
 
 ; Available tags:
 ;   <label-disconnected> (default)
 format-disconnected = <label-disconnected>
 
 ; Default: %ifname% %local_ip%
-label-connected = %upspeed:9% %downspeed:9%
-label-connected-foreground = #eefafafa
+;label-connected = %upspeed:9% %downspeed:9%
+;label-connected-foreground = #eefafafa
 
 ; Default: (none)
 label-disconnected = not connected
 label-disconnected-foreground = #66ffffff
 
 ; Only applies if <ramp-signal> is used
-ramp-signal-0 = ▁
-#ramp-signal-0-foreground = ${colors.darkgrey}
-ramp-signal-1 = ▃
-#ramp-signal-1-foreground = ${colors.red}
-ramp-signal-2 = ▅
-#ramp-signal-2-foreground = ${colors.orange}
-ramp-signal-3 = ▆
-#ramp-signal-3-foreground = ${colors.yellow}
-ramp-signal-4 = ▇
-#ramp-signal-4-foreground = ${colors.lightblue}
-ramp-signal-5 = █
-#ramp-signal-5-foreground = ${colors.blue}
+ramp-signal-0 =
+ramp-signal-0-foreground = ${colors.foreground}
+ramp-signal-1 =
+ramp-signal-1-foreground = ${colors.red}
+ramp-signal-2 =
+ramp-signal-2-foreground = ${colors.orange}
+ramp-signal-3 =
+ramp-signal-3-foreground = ${colors.yellow}
+ramp-signal-4 =
+ramp-signal-4-foreground = ${colors.lightblue}
+ramp-signal-5 =
+ramp-signal-5-foreground = ${colors.blue}
 
 [module/filesystem]
 type = internal/fs
@@ -261,8 +265,8 @@ label-mounted = %{F#99}%mountpoint%: %{F#FF}%free%% %{F#99}of %{F#FF}%total%
 [module/battery]
 type = internal/battery
 full-at = 99
-battery = BAT0
-adapter = ADP1
+battery = BAT1
+adapter = ACAD
 poll-interval = 5
 
 ;format-charging = <ramp-capacity> <label-charging>
@@ -336,9 +340,9 @@ click-middle = playerctl previous &
 type = custom/script
 interval = 1
 format = <label>
-exec = bash ~/.config/polybar/mic-volume.sh show-vol 'alsa_input.pci-0000_00_1b.0.analog-stereo'
+exec = bash ~/.config/polybar/mic-volume.sh show-vol 'alsa_input.pci-0000_03_00.6.HiFi__hw_acp__source'
 
 ; Control actions (using pactl)
-click-left = bash ~/.config/polybar/mic-volume.sh mute-vol 'alsa_input.pci-0000_00_1b.0.analog-stereo'
-; scroll-up = bash ~/.config/polybar/mic-volume.sh inc-vol 'alsa_input.pci-0000_00_1b.0.analog-stereo'
-; scroll-down = bash ~/.config/polybar/mic-volume.sh dec-vol 'alsa_input.pci-0000_00_1b.0.analog-stereo'
+click-left = bash ~/.config/polybar/mic-volume.sh mute-vol 'alsa_input.pci-0000_03_00.6.HiFi__hw_acp__source'
+; scroll-up = bash ~/.config/polybar/mic-volume.sh inc-vol 'alsa_input.pci-0000_03_00.6.HiFi__hw_acp__source'
+; scroll-down = bash ~/.config/polybar/mic-volume.sh dec-vol 'alsa_input.pci-0000_03_00.6.HiFi__hw_acp__source'

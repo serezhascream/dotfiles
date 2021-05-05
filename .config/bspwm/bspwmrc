@@ -1,12 +1,8 @@
 #! /bin/sh
-sxhkd &
-libinput-gestures-setup restart &
+bspc monitor eDP -d 1 2 3 4 5 6 7 8 9 0
 
-bspc monitor eDP1 -d 4 5 6 0
-bspc monitor DP1  -d 1 2 3 7 8 9
-
-bspc config border_width              1
-bspc config window_gap                10
+bspc config border_width              2
+bspc config window_gap                5
 bspc config top_padding               25
 
 bspc config split_ratio               0.5
@@ -16,15 +12,14 @@ bspc config paddingless_monocle       false
 bspc config focus_follows_pointer     true
 bspc config remove_disabled_monitors  true
 bspc config remove_unplugged_monitors true
-bspc config focused_border_color      '#3FC1B0'
+bspc config focused_border_color      '#BF616A'
+# also works well - focused_border_color '#3FC1B0'
 
-bspc rule -a XTerm:FloatingTerminal state=floating
+bspc rule -a Alacritty:FloatingTerminal state=floating
 bspc rule -a XTerm:FloatingVim state=floating
 bspc rule -a Google-chrome desktop="^3" follow=off
 bspc rule -a TelegramDesktop desktop="^4"
 bspc rule -a zoom desktop="^9"
 bspc rule -a Calculator state=floating
 bspc rule -a Blueman-manager state=floating center=true rectangle=592x500+0+0
-
-polybar main --reload &
-polybar second --reload &
+bspc rule -a feh state=floating
