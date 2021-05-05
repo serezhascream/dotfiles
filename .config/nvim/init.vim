@@ -4,8 +4,8 @@ set fileencoding=utf-8 " set file encoding when it`s open
 set nocompatible
 set path+=**
 
-runtime plugins.vim
-runtime snippetlist.vim
+runtime configs/plugins.vim
+runtime snippets/snippets.vim
 
 set completeopt=longest,menuone
 set confirm
@@ -36,19 +36,18 @@ set smartcase
 set smartindent
 set splitbelow
 set splitright
+set statusline+=%F
+set statusline=%<%f%h%m%r%=format=%{&fileformat}\ file=%{&fileencoding}\ enc=%{&encoding}\ %b\ 0x%B\ %l,%c%V\ %P
 set tabstop=4 
 set title
+set titleold=
+set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername} titlelen=0
 set undolevels=1000
 set updatetime =100
+set wildignore+=*/min/*,*/vendor/*,*/node_modules/*,*/bower_components/*,*/dictionaries/*,*/dist_version/*,*/sitestatic/*
 set wildmenu
 set wrap
 set wrapscan
-set wildignore+=*/min/*,*/vendor/*,*/node_modules/*,*/bower_components/*,*/dictionaries/*,*/dist_version/*,*/sitestatic/*
-" set autochdir
-set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername} titlelen=0
-set titleold=
-set statusline+=%F
-set statusline=%<%f%h%m%r%=format=%{&fileformat}\ file=%{&fileencoding}\ enc=%{&encoding}\ %b\ 0x%B\ %l,%c%V\ %P
 
 if &diff
 	highlight DiffAdd cterm=none ctermfg=green ctermbg=black

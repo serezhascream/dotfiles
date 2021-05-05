@@ -8,13 +8,11 @@ Plugin 'ap/vim-css-color'
 Plugin 'w0rp/ale'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'arcticicestudio/nord-vim'
-
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Shougo/deoplete.nvim'
-
 Plugin 'preservim/nerdtree'
-Plugin 'plasticboy/vim-markdown'
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end() 
 
@@ -33,9 +31,12 @@ set wildignore+=*/tmp/*,*/log/*,*/public/sitestatics/*,*/public/img/*,*/public/f
 let g:gitgutter_grep     = ''
 let g:gitgutter_map_keys = 0
 
-runtime configs/ale
+" # VIMWIKI set syntax markdown
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
+runtime configs/ale.vim
 runtime configs/airline.vim
-runtime configs/nerdtree
+runtime configs/nerdtree.vim
 runtime configs/deoplete.vim
 
 colorscheme nord
