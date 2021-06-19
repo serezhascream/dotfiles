@@ -8,7 +8,7 @@ XTerm*VT100*locale: false
 XTerm*VT100*cursorBlink: true
 !! Fonts: name & size
 XTerm*VT100*faceName: Hack
-XTerm*VT100*faceSize: 9
+XTerm*VT100*faceSize: 10
 
 ! Delete
 XTerm*backarrowKey:    false
@@ -20,6 +20,9 @@ XTerm*VT100*selectToClipboard: true
 XTerm*VT100*saveLines: 1000
 ! end ttf settings
 
+XTerm*faceName: Hack
+XTerm*faceSize: 10
+XTerm*renderFont: true
 ! Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
 ! Copyright (c) 2016-present Sven Greb <code@svengreb.de>
 
@@ -72,8 +75,8 @@ XTerm*VT100*saveLines: 1000
 *.color16: #1A1D23
 *.color17: #3FC1B0
 
-Xcursor.theme: xcursor-simpleandsoft
-Xcursor.size: 64
+Xcursor.theme: whiteglass
+Xcursor.size: 20
 
 ! RXVT CONFIG
 URxvt*font: xft:Hack:pixelsize=12
