@@ -1,12 +1,13 @@
-import React, { memo } from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const Template = () => {
-	
-	return (<div><span /></div>);
-}
+const Name = () => {
+	return (
+		
+	);
+};
 
-Template.propTypes = {};
-Template.defaultProps = {};
+Name.propTypes = {};
+Name.defaultProps = {};
 
-export default Template;
+export default Name;

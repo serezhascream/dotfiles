@@ -13,6 +13,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'preservim/nerdtree'
 Plugin 'vimwiki/vimwiki'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 
 call vundle#end() 
 
