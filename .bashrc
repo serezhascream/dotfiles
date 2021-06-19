@@ -2,6 +2,7 @@
 # ~/.bashrc
 #
 
+export EDITOR=nvim
 [[ $- != *i* ]] && return
 
 # load all files from bash config dir
@@ -38,9 +39,7 @@ xhost +local:root > /dev/null 2>&1
 complete -cf sudo
 
 shopt -s checkwinsize
-
 shopt -s expand_aliases
-
 shopt -s histappend
 
 set -o vi
