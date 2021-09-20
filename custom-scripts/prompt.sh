@@ -5,7 +5,7 @@ no="Cancel"
 buttons="$ok\n$no"
 theme="~/.config/rofi/nord.rasi"
 
-chosen="$(echo -e "$buttons"| rofi -p "$1" -theme ~/.config/rofi/prompt.rasi -dmenu -selected-row 2)"
+chosen="$(echo -e "$buttons"| rofi -font "Hack 16" -p "$1" -theme ~/.config/rofi/prompt.rasi -dmenu -selected-row 2)"
 
 case $chosen in
 	$ok)
