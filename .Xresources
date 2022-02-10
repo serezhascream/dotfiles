@@ -51,12 +51,12 @@ XTerm*renderFont: true
 #define nord16 #3FC1B0
 
 *.foreground:   #D8DEE9
-*.background:   #22272f
+*.background:   #111111
 *.cursorColor:  #D8DEE9
 *fading: 35
-*fadeColor: #4C566A
+*fadeColor: #181818
 
-*.color0: #3B4252
+*.color0: #111111
 *.color1: #BF616A
 *.color2: #A3BE8C
 *.color3: #EBCB8B
@@ -72,7 +72,7 @@ XTerm*renderFont: true
 *.color13: #B48EAD
 *.color14: #8FBCBB
 *.color15: #ECEFF4
-*.color16: #1A1D23
+*.color16: #151515
 *.color17: #3FC1B0
 
 Xcursor.theme: whiteglass
