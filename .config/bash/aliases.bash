@@ -16,6 +16,8 @@ alias arestovich="rm -rf node_modules/ && npm i" # for arestoviching modules
 alias swtchmd="sh ~/custom-scripts/switch_mode.sh" # switch mode for displays
 alias prompt="sh ~/custom-scripts/prompt.sh" # prompt smthng
 alias dot="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME" # for managing dotfiles 
+alias nconf="/usr/bin/git --git-dir=$HOME/.nvimconfig/ --work-tree=$HOME/.config/nvim" # for managing neovim config
 alias privC="/usr/bin/git --git-dir=$HOME/privateConfigs/ --work-tree=$HOME" # for managing private configs
 alias pullnotes="rclone sync dropbox:notes ~/notes" # pull notes from dropbox
 alias pushnotes="rclone sync ~/notes dropbox:notes" # push notes to dropbox
+alias beautifulgitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
