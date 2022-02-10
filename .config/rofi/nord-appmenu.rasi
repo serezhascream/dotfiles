@@ -54,6 +54,8 @@
     alternate-urgent-foreground: @urgent-foreground;
     selected-urgent-background:  @gruvbox-dark-red;
     selected-urgent-foreground:  @urgent-foreground;
+	
+	font: "Hack 9";
 }
 /* ==========================================================================
    File: gruvbox-common.rasi
@@ -67,6 +69,8 @@ window {
     background-color: @background;
     border:           1;
     padding:          1;
+	width: 400px;
+	fullscreen: false;
 }
 
 mainbox {
@@ -86,17 +90,29 @@ textbox {
 }
 
 listview {
-    border:       2px solid 0 0;
-    padding:      2px 0 0;
-    border-color: @separatorcolor;
-    spacing:      2px;
-    scrollbar:    @scrollbar;
+	border: 2px solid 0 0;
+	columns: 6;
+	fixed-columns: true;
+	lines: 3;
+	dynamic: true;
+	padding: 2px 0 0;
+	border-color: @separatorcolor;
+	spacing: 2px;
+	scrollbar: @scrollbar;
 }
 
 element {
-    border:  0;
-    padding: 2px 0;
-    text-color:       @normal-foreground;
+	orientation: vertical;
+}
+
+element-icon {
+	size: 1.2em;
+}
+
+element-text {
+	text-size: 16px;
+	highlight: inherit;
+	font: "Hack 8";
 }
 
 element.normal.normal {
