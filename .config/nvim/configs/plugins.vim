@@ -12,7 +12,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'preservim/nerdtree'
-Plugin 'vimwiki/vimwiki'
+" Plugin 'vimwiki/vimwiki'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
@@ -35,7 +35,7 @@ let g:gitgutter_grep     = ''
 let g:gitgutter_map_keys = 0
 
 " # VIMWIKI set syntax markdown
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+" let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 runtime configs/ale.vim
 runtime configs/airline.vim
